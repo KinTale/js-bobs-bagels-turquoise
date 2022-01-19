@@ -52,10 +52,13 @@ So that I can prepare to pay
 When I go to checkout I'd like to know the total sum of the bagels in my basket
 ```
 
-#### METHODS
+ #### DOMAIN MODEL
 
-addToBasket(item) // adds item to baskets & returns false is isBasketFull returns true
-removeFrom(item) // removes item from basket
-isBasketFull() // returns true if basket is full
-increaseBasketCapacity() // Allows the basket to increase amount of items that can be carried
-cannotRemoveItemFromEmptyBasket(item) //
+Class Basket {
+
+addToBasket(sku) // adds item to baskets / checks if basket is full. - if full, returns "WARNING - Basket is full".
+removeItems(sku) // removes item from basket / if item doesnt exist, return "That item isn't in your basket".
+this.basketSize // constructor initial state (capacity = 4)
+checkPrice(sku) // takes on sku parameter, matches with sku in inventory and returns price.
+totalBasketPrice() // sums total of bagel prices in basket.
+} 
